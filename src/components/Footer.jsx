@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
-import { FiGithub, FiTwitter, FiLinkedin, FiInstagram, FiCpu, FiShield, FiActivity, FiArrowUpRight } from 'react-icons/fi';
+import { FiGithub, FiMail, FiLinkedin, FiInstagram, FiCpu, FiShield, FiActivity, FiArrowUpRight } from 'react-icons/fi';
 
 const Footer = () => {
   const [systemTime, setSystemTime] = useState('');
@@ -32,10 +32,10 @@ const Footer = () => {
   }, []);
 
   const socialLinks = [
-    { icon: <FiGithub />, label: 'GITHUB', url: '#', color: 'hover:text-red-500' },
-    { icon: <FiTwitter />, label: 'TWITTER', url: '#', color: 'hover:text-cyan-400' },
-    { icon: <FiLinkedin />, label: 'LINKEDIN', url: '#', color: 'hover:text-blue-500' },
-    { icon: <FiInstagram />, label: 'INSTAGRAM', url: '#', color: 'hover:text-violet-500' },
+    { icon: <FiGithub />, label: 'GITHUB', url: 'https://github.com/7AbdUrRehman7', color: 'hover:text-red-500' },
+    { icon: <FiLinkedin />, label: 'LINKEDIN', url: 'https://www.linkedin.com/in/7abdurrehman/', color: 'hover:text-blue-500' },
+    { icon: <FiMail />, label: 'EMAIL', url: 'mailto:abdurrehman.abd@mail.utoronto.ca', color: 'hover:text-cyan-400' },
+    { icon: <FiInstagram />, label: 'INSTAGRAM', url: 'https://www.instagram.com/abdurrehman.7_/', color: 'hover:text-violet-500' },
   ];
 
   return (
@@ -83,11 +83,11 @@ const Footer = () => {
                 <FiCpu className="text-cyan-500 text-xl group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-2xl font-black text-white tracking-tighter uppercase italic">
-                LEESH<span className="text-cyan-600">ARK</span>
+                ABD UR <span className="text-cyan-600">REHMAN</span>
               </h3>
             </div>
             <p className="text-gray-500 text-xs leading-relaxed uppercase tracking-widest font-light">
-              Designing the future of digital architecture with precision engineering and creative intelligence.
+              Software engineer building multi-agent AI systems, cloud services and full-stack products.
             </p>
             <div className="flex items-center space-x-2">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulseShadow"></span>
@@ -105,11 +105,16 @@ const Footer = () => {
           >
             <h4 className="text-[11px] font-mono font-bold text-cyan-500/80 tracking-[0.4em] uppercase">Control_Center</h4>
             <ul className="space-y-4">
-              {['About', 'Portfolio', 'Experience', 'Lab'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="group flex items-center text-xs text-gray-500 hover:text-white transition-all tracking-widest">
+              {[
+                { label: 'About', href: '#about' },
+                { label: 'Portfolio', href: '#projects' },
+                { label: 'Services', href: '#services' },
+                { label: 'Contact', href: '#contactme' },
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="group flex items-center text-xs text-gray-500 hover:text-white transition-all tracking-widest">
                     <span className="w-0 group-hover:w-4 h-[1px] bg-cyan-500 mr-0 group-hover:mr-3 transition-all duration-300"></span>
-                    {item.toUpperCase()}
+                    {item.label.toUpperCase()}
                   </a>
                 </li>
               ))}
@@ -126,7 +131,7 @@ const Footer = () => {
           >
             <h4 className="text-[11px] font-mono font-bold text-cyan-500/80 tracking-[0.4em] uppercase">Neural_Network</h4>
             <div className="flex flex-wrap gap-2">
-              {['Vite', 'React', 'GSAP', 'Framer', 'Three.js'].map((tech) => (
+              {['Vite', 'React', 'GSAP', 'Framer', 'Tailwind'].map((tech) => (
                 <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] text-gray-500 tracking-widest hover:border-cyan-500/30 hover:text-cyan-400 transition-colors cursor-default">
                   {tech.toUpperCase()}
                 </span>
@@ -135,11 +140,11 @@ const Footer = () => {
             <div className="pt-4 space-y-2">
               <div className="flex items-center space-x-2 text-[9px] text-gray-600 tracking-widest uppercase">
                 <FiShield className="text-cyan-500/40" />
-                <span>Encrypted Transaction</span>
+                <span>Open to Software Engineering Roles</span>
               </div>
               <div className="flex items-center space-x-2 text-[9px] text-gray-600 tracking-widest uppercase">
                 <FiActivity className="text-cyan-500/40" />
-                <span>Uptime: 99.98%</span>
+                <span>Based in Toronto, ON</span>
               </div>
             </div>
           </motion.div>
@@ -158,6 +163,8 @@ const Footer = () => {
                 <motion.a
                   key={social.label}
                   href={social.url}
+                  target={social.url.startsWith('mailto:') ? undefined : '_blank'}
+                  rel="noopener noreferrer"
                   whileHover={{ y: -5, scale: 1.1 }}
                   className={`relative w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 rounded-xl text-xl text-gray-400 ${social.color} transition-all duration-300 group`}
                 >
@@ -172,7 +179,8 @@ const Footer = () => {
                 </motion.a>
               ))}
             </div>
-            <motion.button
+            <motion.a
+              href="#contactme"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="w-full py-4 bg-gradient-to-r from-cyan-600 to-blue-800 text-black font-black text-[10px] uppercase tracking-[0.5em] rounded-xl shadow-[0_10px_30px_rgba(6,182,212,0.2)] flex items-center justify-center space-x-3 group overflow-hidden relative"
@@ -180,7 +188,7 @@ const Footer = () => {
               <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-[100%] transition-all duration-1000" />
               <span>Initiate Transmission</span>
               <FiArrowUpRight className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
 
@@ -189,11 +197,11 @@ const Footer = () => {
           <div className="flex items-center space-x-6">
             <div className="text-[10px] text-gray-600 tracking-[0.3em] font-mono flex items-center">
               <span className="w-1.5 h-1.5 bg-cyan-600 rounded-full mr-2"></span>
-              POWERED BY AI SYSTEMS v3.4.1
+              CLOUD &middot; AI/ML &middot; FULL-STACK
             </div>
             <div className="hidden md:block w-[1px] h-3 bg-white/10"></div>
             <div className="text-[10px] text-gray-600 tracking-[0.3em] font-mono uppercase">
-              Est. 2024 // Archive_001
+              University of Toronto // CS Specialist
             </div>
           </div>
 
@@ -202,7 +210,7 @@ const Footer = () => {
                 Local_Time: {systemTime}
              </div>
              <p className="text-[9px] text-gray-700 tracking-[0.2em] font-mono uppercase">
-                &copy; LEESHARK. ALL NEURAL LINKS RESERVED.
+                &copy; 2026 ABD UR REHMAN. ALL RIGHTS RESERVED.
              </p>
           </div>
         </div>

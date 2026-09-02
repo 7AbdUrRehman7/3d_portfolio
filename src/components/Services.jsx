@@ -21,23 +21,23 @@ export default function Services() {
   const mainServices = [
     {
       icon: <FiLayout size={24} />,
-      title: "Frontend Development",
-      p: "Create responsive, fast, and modern user interfaces using React, Tailwind CSS, and reusable components.",
+      title: "Full-Stack Development",
+      p: "Build responsive React and Next.js front ends on top of typed, well-tested backends, with reusable components and clean architecture.",
     },
     {
       icon: <FiServer size={24} />,
       title: "Backend & API Design",
-      p: "Design and develop secure REST APIs and database integration using FastAPI, Node.js, and MongoDB.",
+      p: "Design secure REST APIs and data models with FastAPI, Node.js, PostgreSQL and MongoDB, including OAuth 2.0 flows and third-party integrations.",
     },
     {
       icon: <FiCloud size={24} />,
-      title: "Deployment & Hosting",
-      p: "Deploy applications on cloud platforms with domain setup and production-ready server configurations.",
+      title: "Cloud & DevOps",
+      p: "Containerize and ship services to Kubernetes and OpenShift with Docker, Helm and CI/CD pipelines built for production workloads.",
     },
     {
       icon: <FiZap size={24} />,
-      title: "Real-Time Solutions",
-      p: "Develop features like chat apps and live notifications using WebSockets and FastAPI.",
+      title: "AI & Agent Systems",
+      p: "Architect multi-agent AI pipelines with LangGraph, MCP, RAG and semantic caching to automate troubleshooting and multi-step workflows.",
     },
   ];
 
@@ -104,7 +104,7 @@ export default function Services() {
         </h2>
         <div className="w-24 h-[1px] bg-blue-500/40 mx-auto mb-8"></div>
         <p className="max-w-3xl mx-auto text-gray-500 font-light text-base leading-relaxed">
-          Leveraging my experience from production-level applications and real-time startup incubation projects to build scalable digital solutions.
+          Drawing on software engineering co-ops at Nokia and DTCForce, where I shipped production multi-agent AI systems and automation pipelines, to build scalable digital solutions.
         </p>
       </div>
 
@@ -157,35 +157,59 @@ export default function Services() {
 
               <div className="flex gap-4 mb-8">
                 <div className="h-10 px-3 bg-white flex items-center justify-center rounded-sm">
-                   <span className="text-black font-black text-[10px] tracking-tighter">AGROGANAM</span>
+                   <span className="text-black font-black text-[10px] tracking-tighter">NOKIA</span>
                 </div>
                 <div className="h-10 px-3 border border-white/20 flex items-center justify-center rounded-sm">
-                   <span className="text-white font-bold text-[10px] tracking-widest">INCUBATION</span>
+                   <span className="text-white font-bold text-[10px] tracking-widest">DTCFORCE</span>
                 </div>
               </div>
 
-              <p className="text-gray-400 font-light text-sm leading-relaxed mb-12">
-                Completed a 6-month internship at <span className="text-white font-medium">Agroganam Technologies</span>, 
-                delivering production-level apps and collaborating on real-time incubation center projects.
-              </p>
+              <div className="space-y-8 mb-12">
+                <div>
+                  <h4 className="text-white text-sm font-bold tracking-wide">Software Engineer &mdash; Cloud &amp; AI/ML</h4>
+                  <span className="text-[9px] font-mono text-blue-400/70 block tracking-[0.2em] uppercase mt-1 mb-3">
+                    Nokia (Co-op) &middot; Jan 2026 &ndash; Apr 2026
+                  </span>
+                  <p className="text-gray-400 font-light text-sm leading-relaxed">
+                    Co-architected a multi-agent AI pipeline (Supervisor, Planning, 4 domain agents) that cut query
+                    resolution from 2&ndash;3 min to 30&ndash;40s, and a two-tier Redis semantic cache that reduced
+                    repeated LLM inference costs by ~60%. Scaled the architecture into a second production agent for
+                    Nokia&rsquo;s 5G core network functions in 2 weeks.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-white text-sm font-bold tracking-wide">Software Engineer &mdash; AI Automation &amp; Integration</h4>
+                  <span className="text-[9px] font-mono text-blue-400/70 block tracking-[0.2em] uppercase mt-1 mb-3">
+                    DTCForce (Co-op) &middot; Sep 2025 &ndash; Dec 2025
+                  </span>
+                  <p className="text-gray-400 font-light text-sm leading-relaxed">
+                    Automated financial data retrieval across 41 workflows by building an AI Financial Agent
+                    orchestrating OAuth-secured APIs with n8n and LLMs, cutting turnaround from 5&ndash;10 min to
+                    1&ndash;2 min and average response latency by 80%.
+                  </p>
+                </div>
+              </div>
 
               <div className="mt-auto space-y-6">
                 <div className="relative overflow-hidden rounded-sm group/img h-40">
                   <div className="absolute inset-0 bg-blue-500/5 z-10 mix-blend-overlay"></div>
                   <img 
                     className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-105" 
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" 
-                    alt="Work Showcase" 
+                    src="/projects/telecom-agent-1.webp" 
+                    alt="Telecom Support Agent multi-agent AI system" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 font-mono text-[8px] text-gray-500 tracking-widest">SYSTEM_IMAGE_01</div>
+                  <div className="absolute bottom-4 left-4 font-mono text-[8px] text-gray-500 tracking-widest">TELECOM_SUPPORT_AGENT</div>
                 </div>
                 
-                <button 
-                  className="w-full py-4 border border-white/10 text-white font-mono text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-300 rounded-sm"
+                <a 
+                  href="/Abd_Ur_Rehman_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center w-full py-4 border border-white/10 text-white font-mono text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-300 rounded-sm"
                 >
-                  View Case Study
-                </button>
+                  View Full Resume
+                </a>
               </div>
             </div>
           </div>

@@ -1,11 +1,14 @@
 import React from 'react';
 import { FiAward, FiBookOpen, FiCode, FiDownload } from "react-icons/fi";
 import { 
+  SiPython, 
+  SiTypescript, 
   SiReact, 
-  SiTailwindcss, 
-  SiMongodb, 
   SiFastapi, 
-  SiGit 
+  SiLangchain, 
+  SiDocker, 
+  SiKubernetes, 
+  SiPostgresql 
 } from "react-icons/si";
 
 export default function About() {
@@ -13,26 +16,29 @@ export default function About() {
     {
       icon: <FiCode size={20} />,
       title: "Languages",
-      desc: "HTML, CSS, JS, React, FastAPI, MongoDB",
+      desc: "Python, Java, TypeScript, JavaScript, SQL, C",
     },
     {
       icon: <FiBookOpen size={20} />,
       title: "Education",
-      desc: "B.E Computer Science",
+      desc: "HBSc Computer Science Specialist (Co-op), University of Toronto",
     },
     {
       icon: <FiAward size={20} />,
-      title: "Projects",
-      desc: "Built 5+ modern web projects",
+      title: "Experience",
+      desc: "Software engineering co-ops at Nokia and DTCForce",
     },
   ];
 
   const Tools = [
-    { icon: <SiReact size={24} />, title: "React js" },
-    { icon: <SiTailwindcss size={24} />, title: "Tailwind css" },
-    { icon: <SiMongodb size={24} />, title: "MongoDB" },
+    { icon: <SiPython size={24} />, title: "Python" },
+    { icon: <SiTypescript size={24} />, title: "TypeScript" },
+    { icon: <SiReact size={24} />, title: "React" },
     { icon: <SiFastapi size={24} />, title: "FastAPI" },
-    { icon: <SiGit size={24} />, title: "Git" },
+    { icon: <SiLangchain size={24} />, title: "LangGraph" },
+    { icon: <SiDocker size={24} />, title: "Docker" },
+    { icon: <SiKubernetes size={24} />, title: "Kubernetes" },
+    { icon: <SiPostgresql size={24} />, title: "PostgreSQL" },
   ];
 
   return (
@@ -46,7 +52,7 @@ export default function About() {
         <div className="absolute inset-y-0 left-0 w-[45%] z-10 pointer-events-none overflow-hidden hidden lg:block" style={{ WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)', maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)' }}>
             <img 
                src="/images/ezgif-frame-240.jpg" 
-               alt="About Profile" 
+               alt="Abd Ur Rehman" 
                className="w-full h-full object-cover opacity-50 grayscale" 
             />
         </div>
@@ -70,9 +76,11 @@ export default function About() {
                 {/* Bio Paragraph */}
                 <div className="robotic-section">
                     <p className="text-gray-400 text-sm md:text-md lg:text-xl font-light leading-relaxed max-w-2xl">
-                        I am a passionate <span className="text-white font-medium">Full Stack Web Developer</span> specializing in the 
-                        modern web ecosystem. My expertise lies in crafting high-performance, 
-                        scalable applications with precision and clean architecture.
+                        I'm a <span className="text-white font-medium">Computer Science Specialist (Co-op)</span> student at the 
+                        University of Toronto who enjoys building clean, dependable software and learning by shipping 
+                        real projects. I work across full-stack development, cloud systems and AI automation &mdash; 
+                        especially when they make workflows simpler and products more useful. I care about strong 
+                        fundamentals: clear code, good design and collaboration.
                     </p>
                 </div>
 
@@ -109,7 +117,9 @@ export default function About() {
                 {/* CTA */}
                 <div className="pt-6">
                     <a 
-                        href="/resume.pdf" 
+                        href="/Abd_Ur_Rehman_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer" 
                         className="inline-flex items-center space-x-6 px-12 py-4 bg-blue-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all duration-300 rounded-full shadow-lg shadow-blue-900/20"
                     >
                         <span>Download Resume</span>

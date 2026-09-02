@@ -109,13 +109,18 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error("COMM_LINK_UNCONFIGURED \u274C");
+      return;
+    }
+
     emailjs
-      .sendForm(
-        "service_ezep6zg",
-        "template_6fbergt",
-        formRef.current,
-        "0GSfZwE2fSCw9lqcZ"
-      )
+      .sendForm(serviceId, templateId, formRef.current, publicKey)
       .then(() => {
         toast.success("TRANSMISSION_COMPLETE 🚀");
         formRef.current.reset();
@@ -218,6 +223,12 @@ const Contact = () => {
                 <FiShield />
                 <span>Protocol: Neural_Gate</span>
               </div>
+              <a
+                href="mailto:abdurrehman.abd@mail.utoronto.ca"
+                className="inline-block mt-4 text-white/50 hover:text-cyan-400 font-mono text-[10px] tracking-[0.3em] lowercase transition-colors"
+              >
+                abdurrehman.abd@mail.utoronto.ca
+              </a>
             </div>
 
             <form

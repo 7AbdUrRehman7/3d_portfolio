@@ -5,8 +5,8 @@ const navLinks = [
   { name: 'Home', href: '#' },
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Portfolio', href: '#projects' },
+  { name: 'Contact', href: '#contactme' }
 ];
 
 export default function Navbar() {
@@ -38,9 +38,9 @@ export default function Navbar() {
           <div className="flex items-center space-x-4 group cursor-pointer" onClick={() => (window.location.href = '#')}>
             <div className="flex flex-col">
                 <span className="text-white text-xl font-black tracking-[0.2em] uppercase leading-none">
-                    LEESHARK<span className="text-blue-500 animate-pulse ml-0.5">.</span>
+                    ABD UR REHMAN<span className="text-blue-500 animate-pulse ml-0.5">.</span>
                 </span>
-                <span className="text-[8px] font-mono text-blue-400 mt-1 opacity-60 tracking-[0.3em] uppercase">SYSTEM ONLINE</span>
+                <span className="text-[8px] font-mono text-blue-400 mt-1 opacity-60 tracking-[0.3em] uppercase">Software Engineer</span>
             </div>
           </div>
 
@@ -79,9 +79,12 @@ export default function Navbar() {
                 </button>
 
                 {/* Hire Me Button */}
-                <button className="px-5 py-1.5 border border-white/20 text-white font-mono text-[9px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-500 rounded-sm">
+                <a
+                  href="mailto:abdurrehman.abd@mail.utoronto.ca"
+                  className="px-5 py-1.5 border border-white/20 text-white font-mono text-[9px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-500 rounded-sm"
+                >
                     Hire Me
-                </button>
+                </a>
             </div>
           </div>
 
@@ -126,9 +129,13 @@ export default function Navbar() {
             </li>
           ))}
           <li className={`pt-6 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: `${navLinks.length * 100}ms` }}>
-            <button className="px-12 py-3 border border-white/20 text-white font-mono text-[10px] uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all rounded-sm">
+            <a
+              href="mailto:abdurrehman.abd@mail.utoronto.ca"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="px-12 py-3 border border-white/20 text-white font-mono text-[10px] uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all rounded-sm"
+            >
                 Hire Me
-            </button>
+            </a>
           </li>
         </ul>
         
